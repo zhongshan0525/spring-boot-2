@@ -25,15 +25,6 @@ public class ServantService {
      * @return 用户集合
      */
     public List<Servant> findAll() {
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i < 10000000; i++) {
-            String str = "";
-            for (int j = 0; j < 1000; j++) {
-                str += UUID.randomUUID().toString();
-            }
-            list.add(str);
-        }
-        System.out.println("ok");
         return servantRepository.findAll();
     }
 
