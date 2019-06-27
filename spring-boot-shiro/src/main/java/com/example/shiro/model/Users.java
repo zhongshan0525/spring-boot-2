@@ -15,15 +15,19 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "user")
-public class User implements Serializable {
+@Entity(name = "users")
+public class Users implements Serializable {
 
     @Id
     @GeneratedValue
     private Integer id;
+
     private String username;
+
     private String password;
+
     private LocalDateTime createTime;
+
     private String status;
     
 }

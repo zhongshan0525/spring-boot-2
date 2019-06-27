@@ -1,7 +1,7 @@
 package com.example.shiro.controller;
 
 import com.example.shiro.model.ResponseBo;
-import com.example.shiro.model.User;
+import com.example.shiro.model.Users;
 import com.example.shiro.util.MD5Utils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
@@ -51,7 +51,7 @@ public class LoginController {
     @RequestMapping("/index")
     public String index(Model model) {
     	// 登录成后，即可通过Subject获取登录的用户信息
-        User user = (User) SecurityUtils.getSubject().getPrincipal();
+        Users user = (Users) SecurityUtils.getSubject().getPrincipal();
         model.addAttribute("user", user);
         return "index";
     }

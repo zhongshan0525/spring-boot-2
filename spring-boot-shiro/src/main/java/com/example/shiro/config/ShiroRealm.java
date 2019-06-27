@@ -1,7 +1,7 @@
 package com.example.shiro.config;
 
 import com.example.shiro.dao.UserRepository;
-import com.example.shiro.model.User;
+import com.example.shiro.model.Users;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -34,7 +34,7 @@ public class ShiroRealm extends AuthorizingRealm {
         System.out.println("用户" + userName + "认证-----ShiroRealm.doGetAuthenticationInfo");
 
         // 通过用户名到数据库查询用户信息
-        User user = userRepository.findByUsername(userName);
+        Users user = userRepository.findByUsername(userName);
         
         if (user == null) {
             throw new UnknownAccountException("用户名或密码错误！");
