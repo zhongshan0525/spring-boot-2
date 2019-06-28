@@ -34,9 +34,9 @@ public class ServantService {
      * @param id 英灵id
      * @return 英灵
      */
-    public Optional<Servant> findById(int id) {
-        return servantRepository.findById(id);
-    }
+//    public Optional<Servant> findById(int id) {
+//        return servantRepository.(id);
+//    }
 
     /**
      * 添加英灵
