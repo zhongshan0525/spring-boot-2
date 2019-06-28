@@ -43,21 +43,17 @@ public class ServantController implements ServantControllerApi {
         return map;
     }
 
-    @Override
-    public Optional<Servant> findById(int id) {
-        return Optional.empty();
-    }
 
     /**
      * 通过id查询英灵
      * @param id 英灵id
      * @return 英灵实体
      */
-//    @Override
-//    @GetMapping("/findById/{id}")
-//    public Optional<Servant> findById(@PathVariable("id") int id) {
-//        return servantService.findById(id);
-//    }
+    @Override
+    @GetMapping("/findById/{id}")
+    public Optional<Servant> findById(@PathVariable("id") int id) {
+        return servantService.findById(id);
+    }
 
     /**
      * 添加英灵

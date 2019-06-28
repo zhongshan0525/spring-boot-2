@@ -14,7 +14,7 @@
 ##    driver-class-name: org.postgresql.Driver
 #\u8FDE\u63A5\u6C60\u7684\u914D\u7F6E
 server:
-  port: 10002
+  port: ${PORT:9999}
 spring:
   application:
     name: spring-boot-swagger
@@ -38,9 +38,11 @@ eureka:
     registerWithEureka: true #服务注册开关
     fetch-registry: true  #服务发现开关
     service-url:
-      defaultZone: http://localhost:8761/eureka/ #Eureka客户端与Eureka服务端进行交互的地址，多个中间用逗号分隔
+      defaultZone: http://localhost:10086/eureka/ #Eureka客户端与Eureka服务端进行交互的地址，多个中间用逗号分隔
   instance:
     prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
     ip-address: ${IP_ADDRESS:127.0.0.1}
     instance-id: ${spring.application.name}:${server.port} #指定实例id
-
+    statusPageUrlPath: http://${eureka.instance.ip-address}:${server.port}/swagger-ui.html #eureka跳转页面
+#    healthCheckUrlPath: http://127.0.0.1:10002/swagger-ui.html
+#    homePageUrl: http://127.0.0.1:10002/swagger-ui.html
