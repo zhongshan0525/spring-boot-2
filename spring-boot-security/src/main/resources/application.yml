@@ -1,3 +1,13 @@
 server:
   port: 8882
-
+#数据库
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/db?useSSL=false&characterEncoding=utf-8
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update  #自动创建表
+    show-sql: true  #显示sql
