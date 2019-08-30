@@ -1,10 +1,10 @@
-package com.example.elasticsearch.controller;
+package com.example.elasticsearch.service;
 
 /**
  * @author yanlongzhang
  * @date 2019/8/30
  */
-public class EsController {
+public class EsService {
     public static void main(String[] args) {
 
     }
