@@ -6,6 +6,6 @@ package com.example.elasticsearch.service;
  */
 public class EsService {
     public static void main(String[] args) {
-
+        System.out.println("test");
     }
 }
