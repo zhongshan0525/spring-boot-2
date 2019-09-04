@@ -6,6 +6,6 @@ package com.example.elasticsearch.controller;
  */
 public class EsController {
     public static void main(String[] args) {
-
+        System.out.println("esDemo");
     }
 }
