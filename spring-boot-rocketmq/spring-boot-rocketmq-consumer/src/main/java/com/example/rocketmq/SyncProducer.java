@@ -8,6 +8,7 @@ import org.apache.rocketmq.remoting.common.RemotingHelper;
 /**
  * 发送消息同步
  * 可靠的同步传输用于大量场景,如重要通知消息、短信通知、短信营销系统等
+ * @author zyl
  */
 public class SyncProducer {
     public static void main(String[] args) throws Exception {
@@ -18,12 +19,10 @@ public class SyncProducer {
         producer.setNamesrvAddr("localhost:9876");
         //启动实例.
         producer.start();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             //创建消息实例，指定主题，标记和消息正文.
-            Message msg = new Message("TopicTest" /* Topic */,
-                    "TagA" /* Tag */,
-                    ("Hello RocketMQ " +
-                            i).getBytes(RemotingHelper.DEFAULT_CHARSET) /* Message body */
+            Message msg = new Message("TopicTest", "TagA",
+                    ("Hello RocketMQ " + i).getBytes(RemotingHelper.DEFAULT_CHARSET)
             );
             //Call send message to deliver message to one of brokers.
             SendResult sendResult = producer.send(msg,100000);
