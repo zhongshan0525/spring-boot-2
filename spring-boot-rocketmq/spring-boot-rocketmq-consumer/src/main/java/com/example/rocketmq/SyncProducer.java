@@ -16,12 +16,12 @@ public class SyncProducer {
         DefaultMQProducer producer = new
                 DefaultMQProducer("please_rename_unique_group_name");
         // 指定名称服务器地址.
-        producer.setNamesrvAddr("localhost:9876");
+        producer.setNamesrvAddr("127.0.0.1:9876");
         //启动实例.
         producer.start();
         for (int i = 0; i < 10; i++) {
             //创建消息实例，指定主题，标记和消息正文.
-            Message msg = new Message("TopicTest", "TagA",
+            Message msg = new Message("TopicTest2", "TagA",
                     ("Hello RocketMQ " + i).getBytes(RemotingHelper.DEFAULT_CHARSET)
             );
             //Call send message to deliver message to one of brokers.
